@@ -9,7 +9,7 @@ resources:
 - repo: self
 
 variables:
-  containerRegistryServiceConnection: myshoppingreg.azurecr.io
+  containerRegistryServiceConnection: myshoppingreg
   imageRepository: sptek-shopping
   tag: '$(Build.BuildId)'
 
