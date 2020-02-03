@@ -35,7 +35,7 @@ stages:
     - task: CopyFiles@2
       displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
       inputs:
-        contents: /home/vsts/work/1/s/MSA_Shopping/*
+        contents: /home/vsts/work/1/s/MSA_Shopping/target/*
         targetFolder: $(Build.ArtifactStagingDirectory)
 
     - task: PublishBuildArtifacts@1
