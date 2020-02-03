@@ -11,9 +11,6 @@ resources:
 variables:
   containerRegistryServiceConnection: mymbrcontainreg
   imageRepository: sptek-shopping
-  tag: v01
-
-variables:
   tag: '$(Build.BuildId)'
 
 stages:
