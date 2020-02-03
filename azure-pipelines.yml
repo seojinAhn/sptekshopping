@@ -24,6 +24,23 @@ stages:
     steps:
     
     - task: Docker@2
+      displayName: Build an image
       inputs:
-        command: login
+        command: build
+        dockerfile: './**/Dockerfile'
         containerRegistry: $(containerRegistryServiceConnection)
+        repository: $(imageRepository)
+        tags: |
+          $(tag)
+        arguments: '--disable-content-trust=false'
+
+    - task: Docker@2
+      inputs: 
+        command: push
+        containerRegistry: $(containerRegistryServiceConnection)
+        repository: $(imageRepository)
+        tags: |
+          $(tag)
+        arguments: '--disable-content-trust=false'
+      env:
+        DOCKER_CONTENT_TRUST_REPOSITORY_PASSPHRASE: $(DOCKER_CONTENT_TRUST_REPOSITORY_PASSPHRASE)
