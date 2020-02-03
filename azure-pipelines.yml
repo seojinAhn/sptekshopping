@@ -37,7 +37,7 @@ stages:
       inputs:
         contents: |
               /home/vsts/work/1/s/MSA_Shopping/*
-              /home/vsts/work/1/s/MSA_Product/target/**.war
+              /home/vsts/work/1/s/MSA_Shopping/target/**.war
         targetFolder: $(Build.ArtifactStagingDirectory)
 
     - task: PublishBuildArtifacts@1
